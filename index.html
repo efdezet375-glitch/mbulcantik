@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hai, cantikku mbul 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffeef5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Georgia', serif;
+}
+
+.open-button {
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 35px;
+  font-size: 1.2em;
+  cursor: pointer;
+  font-family: 'Great Vibes', cursive;
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4);
+  animation: pulse 2s infinite;
+  transition: transform 0.2s ease;
+}
+.open-button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(255, 192, 203, 0.6); }
+  50% { box-shadow: 0 0 20px rgba(255, 105, 180, 0.9); }
+  100% { box-shadow: 0 0 10px rgba(255, 192, 203, 0.6); }
+}
+
+.paper-frame {
+  display: none;
+  background: #fffaf0;
+  border: 8px solid #d4b483;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  padding: 40px 30px;
+  max-width: 600px;
+  text-align: center;
+  background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                    url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-size: cover;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1s ease;
+}
+
+.show { display: block; opacity: 1; transform: scale(1); }
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  color: #8b4513;
+  font-size: 2.4em;
+  margin-bottom: 15px;
+  animation: slideUp 1s ease forwards;
+}
+
+#loveText {
+  color: #4b3832;
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  min-height: 120px;
+  white-space: pre-wrap;
+}
+
+/* Love-shaped image with animated heartbeat */
+.love-frame {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px 0 20px 0;
+  clip-path: polygon(
+    50% 0%, 61% 7%, 68% 18%, 70% 29%,
+    63% 40%, 50% 55%, 37% 40%, 30% 29%,
+    32% 18%, 39% 7%
+  );
+  overflow: hidden;
+  transition: all 1s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  border: 4px solid #ff69b4;
+  box-sizing: border-box;
+}
+
+.love-frame.show-img { opacity: 1; transform: scale(1); }
+
+.love-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Heartbeat animation synchronized (simulated) */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); border-color: #ff69b4; }
+  50% { transform: scale(1.1); border-color: #ff1493; }
+}
+
+.iframe-container {
+  margin-top: 15px;
+  border-radius: 12px;
+}
+
+.signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6em;
+  color: #8b4513;
+  margin-top: 25px;
+  transform: rotate(-2deg);
+  opacity: 0.9;
+}
+
+.flower {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall linear forwards;
+  z-index: 9999;
+  color: #ffb6c1;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh) rotate(360deg); opacity: 0.8; }
+}
+
+/* Kucing lucu */
+.cat {
+  position: fixed;
+  font-size: 30px;
+  animation: jump 3s infinite;
+  z-index: 10000;
+}
+
+@keyframes jump {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-50px) rotate(20deg); }
+}
+
+@media (max-width: 600px) {
+  .paper-frame { padding: 25px 20px; margin: 15px; }
+  h1 { font-size: 2em; }
+  #loveText { font-size: 1em; }
+  .love-frame { width: 160px; height: 160px; }
+  .signature { font-size: 1.3em; }
+}
+</style>
+</head>
+<body>
+
+<button class="open-button" onclick="openLetter()">💌 buka surat dari org keren 💌</button>
+
+<div class="paper-frame" id="letter">
+<h1>hai, cantikku mbul 💕</h1>
+
+<!-- Love frame -->
+<div class="love-frame" id="loveImgFrame">
+  <img src="https://i.ibb.co/8g4Nytzn/Picsart-25-10-25-23-18-17-977.jpg" 
+       alt="Foto Cantikku"
+       onerror="this.src='https://via.placeholder.com/200'">
+</div>
+
+<p id="loveText"></p>
+
+<div class="iframe-container">
+  <iframe style="border-radius:12px"  
+      src="https://open.spotify.com/embed/track/5WOSNVChcadlsCRiqXE45K?utm_source=generator" 
+      width="100%" height="80" frameBorder="0" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
+</div>
+
+<div class="signature">~ dari org keren yang sayang kamu mbul💖</div>
+</div>
+
+<script>
+const flowers = ['🌸', '🌺', '🌷', '💮', '🌼'];
+function createFlower() {
+  const flower = document.createElement('div');
+  flower.classList.add('flower');
+  flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+  flower.style.left = Math.random() * 100 + 'vw';
+  flower.style.animationDuration = (5 + Math.random() * 5) + 's';
+  document.body.appendChild(flower);
+  setTimeout(() => flower.remove(), 10000);
+}
+
+const text = `berjalannya detik bersamamu adalah momen berharga yang tak akan tergantikan.
+setiap senyummu membawa ketenangan, setiap tatapanmu memberi semangat baru.
+
+terimakasih sudah menjadi bagian terindah dalam hidupku ya mbul.
+aku bersyukur setiap hari bisa memilikimu 💞`;
+
+function openLetter() {
+  document.querySelector('.open-button').style.display = 'none';
+  const letter = document.getElementById('letter');
+  letter.classList.add('show');
+
+  // animasi fade-in love frame
+  const loveFrame = document.getElementById('loveImgFrame');
+  setTimeout(() => loveFrame.classList.add('show-img'), 500);
+
+  // simulasi heartbeat sync dengan musik (loop)
+  let heartbeatInterval = 600; // tempo rata-rata denyut
+  let hb = setInterval(() => {
+    loveFrame.style.transform = 'scale(1.06)';
+    setTimeout(()=>{ loveFrame.style.transform='scale(1)'; }, 300);
+  }, heartbeatInterval);
+
+  setInterval(createFlower, 300);
+  spawnCats();
+  playText();
+
+  // stop heartbeat when page hidden (save CPU)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) clearInterval(hb);
+  });
+}
+
+function playText() {
+  const loveText = document.getElementById("loveText");
+  let i = 0;
+  function typeEffect() {
+    if (i < text.length) {
+      loveText.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, 50);
+    }
+  }
+  typeEffect();
+}
+
+// Kucing lucu
+function spawnCats() {
+  setInterval(() => {
+    const cat = document.createElement('div');
+    cat.classList.add('cat');
+    cat.textContent = '🐱';
+    cat.style.left = Math.random() * 90 + 'vw';
+    cat.style.animationDuration = (2 + Math.random()*2) + 's';
+    document.body.appendChild(cat);
+    setTimeout(()=>cat.remove(), 4000);
+  }, 1200);
+}
+
+</script>
+</body>
+</html>
